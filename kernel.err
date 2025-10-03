@@ -1,0 +1,4 @@
+source/kernel/std/stdlib.h(14): Warning! W138: No newline at end of file
+source/kernel/kernel.c(9): Warning! W111: Meaningless use of an expression
+source/kernel/kernel.c(4): Warning! W303: Parameter 'bootDrive' has been defined, but not referenced
+source/kernel/kernel.c(11): Warning! W138: No newline at end of file

@@ -1,0 +1,12 @@
+megs: 32
+romimage: file=bochs-2.6.11/bios/BIOS-bochs-latest
+vgaromimage: file=2.6.11/bios/VGABIOS-lgpl-latest
+
+floppya: 1_44=disk.img, status=inserted
+
+boot: floppy
+
+log: bochslog.txt
+
+# Enable debugging
+magic_break: enabled=1

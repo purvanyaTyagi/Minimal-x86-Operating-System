@@ -1,0 +1,105 @@
+Open Watcom Linker Version 2.0 beta Mar  1 2025 02:26:26 (64-bit)
+Copyright (c) 2002-2025 The Open Watcom Contributors. All Rights Reserved.
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       25/03/27 11:47:09
+Executable Image: build/kernel.bin
+creating a RAW Binary Image executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          000003e0             000000cc
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+_ENTRY                 CODE           AUTO           00000000        00000013
+_TEXT                  CODE           AUTO           00000013        000003cc
+CONST                  DATA           DGROUP         000003e0        000000bc
+CONST2                 DATA           DGROUP         0000049c        00000000
+_DATA                  DATA           DGROUP         0000049c        0000000e
+_BSS                   BSS            DGROUP         000004aa        00000002
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: build/std/x86.o(source/kernel/std/x86.asm)
+00000017       _x86_protected_mode_jump
+0000001c       _x86_Video_WriteCharTeletype
+0000002f       _x86_readbyte_function
+00000045       _x86_diskread_function
+Module: build/kernel.o(source/kernel/kernel.asm)
+00000000       entry
+Module: build/std/stdlib.o(/home/purvanya/projects/minimal-os-self/source/kernel/std/stdlib.c)
+000000ae+      putc_
+000000d5       print_
+0000010c+      load_lba_
+00000142+      load_root_
+000001e7+      read_byte_
+00000214+      check_root_file_
+000002b9+      check_root_file_cluster_
+0000035b+      load_file_memory_
+0000039e       switch_protected_
+0000049c+      _load_addr_segment
+0000049e+      _load_addr_offset
+000004a0+      _g_BootSector
+000004aa+      _g_RootDirectoryEnd
+Module: build/kernel_c.o(/home/purvanya/projects/minimal-os-self/source/kernel/kernel.c)
+000003c2       _cstart_
+
+
+                        +---------------------+
+                        |   Module Segments   |
+                        +---------------------+
+
+! = 32-bit segment
+c = initialized communal data
+
+Module          Segment               Class           Address         Size
+======          =======               =====           =======         ====
+
+source/kernel/std/x86.asm
+                _TEXT                 CODE           00000013         0000009b
+source/kernel/kernel.asm
+                _ENTRY                CODE           00000000         00000013
+/home/purvanya/projects/minimal-os-self/source/kernel/std/stdlib.c
+                _TEXT                 CODE           000000ae         00000314
+                CONST                 DATA           000003e0         000000a6
+                CONST2                DATA           0000049c         00000000
+                _DATA                 DATA           0000049c         0000000e
+                _BSS                  BSS            000004aa         00000002
+/home/purvanya/projects/minimal-os-self/source/kernel/kernel.c
+                _TEXT                 CODE           000003c2         0000001d
+                CONST                 DATA           00000486         00000016
+                CONST2                DATA           0000049c         00000000
+                _DATA                 DATA           000004aa         00000000
+Warning! W1014: stack segment not found
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  0200 (512.)
+Memory size:  04ac (1196.)
+Entry point address: 00000000
+Link time: 00:00.13
